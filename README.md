@@ -1,1 +1,1 @@
-# AstonJavaIntensiveModule4
+![Coverage](misc/images/coverage.jpg)
