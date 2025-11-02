@@ -46,7 +46,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> readById(@PathVariable final Integer id) {
+    public ResponseEntity<?> readById(@PathVariable("id") final Integer id) {
         try {
             final UserResponseDTO user = this.userService.findById(id);
 
@@ -58,7 +58,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable final Integer id, @RequestBody final UserRequestDTO userRequestDTO) {
+    public ResponseEntity<?> update(@PathVariable("id") final Integer id, @RequestBody final UserRequestDTO userRequestDTO) {
         try {
             final UserResponseDTO user = this.userService.updateUser(id, userRequestDTO);
 
@@ -70,7 +70,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable final Integer id) {
+    public ResponseEntity<?> delete(@PathVariable("id") final Integer id) {
         try {
             final boolean isDeleted = this.userService.deleteById(id);
 
