@@ -3,14 +3,24 @@ package edu.aston.userservice.dto;
 import edu.aston.userservice.entity.User;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 public class UserResponseDTO {
-    private Integer id;
-    private String name;
-    private String email;
-    private Integer age;
-    private LocalDateTime createdAt;
+    @Schema(description = "User ID in the database")
+    private final Integer id;
+
+    @Schema(description = "Username in the database")
+    private final String name;
+
+    @Schema(description = "User email in the database")
+    private final String email;
+
+    @Schema(description = "User age in the database")
+    private final Integer age;
+
+    @Schema(description = "Date of user creation in the database")
+    private final LocalDateTime createdAt;
 
     public UserResponseDTO(final int id, final String name, final String email, final int age, final LocalDateTime createdAt) {
         this.id = id;

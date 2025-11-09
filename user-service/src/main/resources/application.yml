@@ -17,8 +17,20 @@ spring:
 logging:
   level:
     edu.aston.userservice: INFO
+    org.springdoc: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.web.servlet.mvc: DEBUG
   file:
     name: logs/application.log
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %-50logger - %msg%n"
   register-shutdown-hook: true
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+  api-docs:
+    path: /api-docs
+  packages-to-scan:
+    - edu.aston.userservice

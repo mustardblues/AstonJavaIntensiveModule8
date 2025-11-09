@@ -1,8 +1,15 @@
 package edu.aston.userservice.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 public class UserRequestDTO {
+    @Schema(description = "Username from request")
     private String name;
+
+    @Schema(description = "User email from request")
     private String email;
+
+    @Schema(description = "User age from request")
     private Integer age;
 
     public UserRequestDTO() {}

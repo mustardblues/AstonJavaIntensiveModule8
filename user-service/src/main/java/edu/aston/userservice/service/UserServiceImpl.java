@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 
             logger.info("The user has been created: {}", user.toString());
 
-            this.userEventProducer.sendEvent("CREATE", email);
+//            this.userEventProducer.sendEvent("CREATE", email);
 
             return new UserResponseDTO(user);
         }
@@ -125,7 +125,7 @@ public class UserServiceImpl implements UserService {
 
                 logger.info("The user with ID {} was deleted from the database.", id);
 
-                this.userEventProducer.sendEvent("DELETE", optional.get().getEmail());
+//                this.userEventProducer.sendEvent("DELETE", optional.get().getEmail());
 
                 return true;
             }
