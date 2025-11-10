@@ -120,7 +120,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = "Update user information in the database")
+    @Operation(summary = "Delete user information in the database")
     @ApiResponse(responseCode = "200", description = "The user has been removed from the database")
     @ApiResponse(responseCode = "404", description = "Failed to find user in the database")
     public ResponseEntity<?> delete(
