@@ -2,35 +2,9 @@ spring:
   application:
     name: user-service
 
-  datasource:
-    url: jdbc:postgresql://localhost:5432/userservicedb
-    username: mustardblues
-    password: mustardblues
-    driver-class-name: org.postgresql.Driver
+  config:
+    import: optional:configserver:http://localhost:8888
 
-  kafka:
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
-logging:
-  level:
-    edu.aston.userservice: INFO
-    org.springdoc: DEBUG
-    org.springframework.web: DEBUG
-    org.springframework.web.servlet.mvc: DEBUG
-  file:
-    name: logs/application.log
-  pattern:
-    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %-50logger - %msg%n"
-  register-shutdown-hook: true
-
-
-springdoc:
-  swagger-ui:
-    path: /swagger-ui
-  api-docs:
-    path: /api-docs
-  packages-to-scan:
-    - edu.aston.userservice
+  cloud:
+    config:
+      uri: http://localhost:8888
