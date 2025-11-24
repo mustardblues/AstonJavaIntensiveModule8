@@ -147,9 +147,10 @@ public class UserServiceTest {
     void testDeleteById() throws Exception {
         when(this.userRepository.findById(1)).thenReturn(
                 Optional.of(new User(1, "test", "test@email.com", 18)));
-        when(this.userRepository.findById(2)).thenReturn(Optional.empty());
 
-        doNothing().when(this.userEventProducer).sendEvent("DELETE", "test@email.com");
+//        when(this.userRepository.findById(2)).thenReturn(Optional.empty());
+
+//        doNothing().when(this.userEventProducer).sendEvent("DELETE", "test@email.com");
 
         assertTrue(this.userService.deleteById(1));
         assertFalse(this.userService.deleteById(2));
